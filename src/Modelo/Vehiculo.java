@@ -8,6 +8,13 @@ private String nombreDelDueno;
 private String cedulaDelDueno;
 private String placaDelVehiculo;
 
+   public Vehiculo(String numeroDeRegistro, String nombreDelDueno, String cedulaDelDueno, String placaDelVehiculo){
+       this.numeroDeRegistro=numeroDeRegistro;
+       this.nombreDelDueno=nombreDelDueno;
+       this.cedulaDelDueno=cedulaDelDueno;
+       this.placaDelVehiculo=placaDelVehiculo;
+   }
+
     public String getNumeroDeRegistro() {
         return numeroDeRegistro;
     }
@@ -40,5 +47,8 @@ private String placaDelVehiculo;
         this.placaDelVehiculo = placaDelVehiculo;
     }
 
-
+    public String getInformacion(){
+        return "Vehiculo con el Número de Registro: "+numeroDeRegistro+" Perteneciente a: "+
+                nombreDelDueno+" Cedula: "+cedulaDelDueno+" Con la placa: "+placaDelVehiculo;
+    }
 }

@@ -5,17 +5,62 @@
  */
 package Vista;
 
+import Controlador.Controlador_FRM_RegistroVehiculos;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Hogar
  */
 public class FRM_RegistroVehiculos extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FRM_RegistroVehiculos
-     */
+    Controlador_FRM_RegistroVehiculos controlador;
     public FRM_RegistroVehiculos() {
         initComponents();
+        controlador=new Controlador_FRM_RegistroVehiculos(this);
+        this.gUI_Botones2.agregarEventos(controlador);
+        this.gUI_Informacion1.agregarEventos(controlador);
+        estadoInicial();
+    }
+    
+    public String devolverNumeroDeRegistro(){
+        return this.gUI_Informacion1.devolverNumeroDeRegistro();
+    }
+    public String devolverNombreDelDueno(){
+        return this.gUI_Informacion1.devolverNombreDelDueno();
+    }
+    public String devolverCedulaDelDueno(){
+        return this.gUI_Informacion1.devolverCedulaDelDueno();
+    }
+    public String devolverPlacaDelVehiculo(){
+        return this.gUI_Informacion1.devolverPlacaDelVehiculo();
+    }
+    public void limpiar(){
+        this.gUI_Informacion1.limpiar();
+    }
+    public void estadoInicial(){
+        this.gUI_Botones2.estadoInicial();
+        this.gUI_Informacion1.estadoInicial();
+    }
+    public void deshabilitarNumeroDeRegistro(){
+        this.gUI_Informacion1.deshabilitarNumeroDeRegistro();
+    }
+    public void habilitarOpciones(){
+        this.gUI_Botones2.habilitarOpciones();
+        this.gUI_Informacion1.habilitarOpciones();
+    }
+    public void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(null, mensaje);
+    }
+    public void habilitarAgregar(){
+        this.gUI_Botones2.habilitarAgregar();
+        this.gUI_Informacion1.habilitarAgregar();
+    }
+    public void mostrarInformacion(String[] arreglo){
+        this.gUI_Informacion1.mostrarInformacion(arreglo);
+    }
+    public String[] devolverInformacion(){
+        return this.gUI_Informacion1.devolverInformacion();
     }
 
     /**

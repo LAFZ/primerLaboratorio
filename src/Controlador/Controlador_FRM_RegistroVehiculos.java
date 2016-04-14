@@ -19,7 +19,7 @@ public class Controlador_FRM_RegistroVehiculos implements ActionListener{
     FRM_RegistroVehiculos frm_Vehiculos;
     MetodosVehiculos metodos;
     
-    public void Controlador_FRM_RegistroVehiculos(FRM_RegistroVehiculos frm_Vehiculos){
+    public Controlador_FRM_RegistroVehiculos(FRM_RegistroVehiculos frm_Vehiculos){
         this.frm_Vehiculos= frm_Vehiculos;
         metodos=new MetodosVehiculos();
     }
@@ -29,12 +29,11 @@ public class Controlador_FRM_RegistroVehiculos implements ActionListener{
     }
     if(e.getActionCommand().equals("Agregar")){
         this.metodos.agregarVehiculo(this.frm_Vehiculos.devolverInformacion());
-        metodos.mostrarInformacionVehiculos();
         frm_Vehiculos.limpiar();
         frm_Vehiculos.estadoInicial();
     }
     if(e.getActionCommand().equals("Modificar")){
-       this.metodos.modificarVehiculo(this.frm_Vehiculos.devolverNumeroDeRegistro(), this.frm_Vehiculos.devolverMarca(),this.frm_Vehiculos.devolverTipo(),this.frm_Vehiculos.devolverAnio());
+       this.metodos.modificarVehiculo(this.frm_Vehiculos.devolverNumeroDeRegistro(), this.frm_Vehiculos.devolverNombreDelDueno(),this.frm_Vehiculos.devolverCedulaDelDueno(),this.frm_Vehiculos.devolverPlacaDelVehiculo());
        this.frm_Vehiculos.limpiar();
        this.frm_Vehiculos.estadoInicial();
     }
@@ -51,7 +50,7 @@ public void buscar(){
           this.frm_Vehiculos.deshabilitarNumeroDeRegistro();
           this.frm_Vehiculos.mostrarMensaje("El vehiculo consultado con la placa: "+this.frm_Vehiculos.devolverNumeroDeRegistro()+" se encuentra registrado");
       }else{
-          this.frm_Vehiculos.mostrarMensaje("El vehiculo consultado no se encuentra registrado.");
+          this.frm_Vehiculos.mostrarMensaje("El vehiculo consultado no se encuentra registrado. "+this.frm_Vehiculos.devolverNumeroDeRegistro());
           this.frm_Vehiculos.habilitarAgregar();
       }  
     }
