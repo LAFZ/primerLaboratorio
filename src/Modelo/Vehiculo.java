@@ -47,8 +47,4 @@ private String placaDelVehiculo;
         this.placaDelVehiculo = placaDelVehiculo;
     }
 
-    public String getInformacion(){
-        return "Vehiculo con el Número de Registro: "+numeroDeRegistro+" Perteneciente a: "+
-                nombreDelDueno+" Cedula: "+cedulaDelDueno+" Con la placa: "+placaDelVehiculo;
-    }
 }
