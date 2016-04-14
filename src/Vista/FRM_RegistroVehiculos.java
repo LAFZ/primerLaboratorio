@@ -21,8 +21,11 @@ public class FRM_RegistroVehiculos extends javax.swing.JFrame {
         this.gUI_Botones2.agregarEventos(controlador);
         this.gUI_Informacion1.agregarEventos(controlador);
         estadoInicial();
+        colocarNumeroDeRegistro();
     }
-    
+    public void colocarNumeroDeRegistro(){
+        this.gUI_Informacion1.colocarNumeroDeRegistro(this.controlador.colocarNumeroDeRegistro());
+    }
     public String devolverNumeroDeRegistro(){
         return this.gUI_Informacion1.devolverNumeroDeRegistro();
     }

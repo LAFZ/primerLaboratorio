@@ -49,4 +49,22 @@ public class MetodosVehiculos {
     public String[] getArregloInformacion(){
         return arregloInformacion;
     }
+    
+    public String generarNumeroDeRegistro()
+    {
+        String codigo="0";
+        if(this.arrayVehiculos.size()==0){
+            codigo="1";
+        }else{
+        for(int i=0;i<arrayVehiculos.size();i++){
+            if(this.arrayVehiculos.get(i)!=null){
+            codigo=this.arrayVehiculos.get(i).getNumeroDeRegistro();
+            }
+        }
+        int numero=Integer.parseInt(codigo);
+        numero++;
+        codigo=""+numero;
+        }
+    return codigo;
+    }
 }

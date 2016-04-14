@@ -14,7 +14,9 @@ public class GUI_Informacion extends javax.swing.JPanel {
     public void agregarEventos(Controlador_FRM_RegistroVehiculos controlador){
         this.controlador=controlador;
     }
-    
+    public void colocarNumeroDeRegistro(String numeroDeRegistro){
+        this.jt_NumeroDeRegistro.setText(numeroDeRegistro);
+    }
     public String devolverNumeroDeRegistro(){
         return this.jt_NumeroDeRegistro.getText();
     }

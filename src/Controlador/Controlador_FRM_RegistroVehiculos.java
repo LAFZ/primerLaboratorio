@@ -26,11 +26,14 @@ public class Controlador_FRM_RegistroVehiculos implements ActionListener{
     public void actionPerformed(ActionEvent e){
     if(e.getActionCommand().equals("Consultar")){
         buscar();
+        
+         
     }
     if(e.getActionCommand().equals("Agregar")){
         this.metodos.agregarVehiculo(this.frm_Vehiculos.devolverInformacion());
         frm_Vehiculos.limpiar();
         frm_Vehiculos.estadoInicial();
+        //colocarNumeroDeRegistro();
     }
     if(e.getActionCommand().equals("Modificar")){
        this.metodos.modificarVehiculo(this.frm_Vehiculos.devolverNumeroDeRegistro(), this.frm_Vehiculos.devolverNombreDelDueno(),this.frm_Vehiculos.devolverCedulaDelDueno(),this.frm_Vehiculos.devolverPlacaDelVehiculo());
@@ -50,8 +53,14 @@ public void buscar(){
           this.frm_Vehiculos.deshabilitarNumeroDeRegistro();
           this.frm_Vehiculos.mostrarMensaje("El vehiculo consultado con la placa: "+this.frm_Vehiculos.devolverNumeroDeRegistro()+" se encuentra registrado");
       }else{
+          frm_Vehiculos.colocarNumeroDeRegistro();
           this.frm_Vehiculos.mostrarMensaje("El vehiculo consultado no se encuentra registrado. "+this.frm_Vehiculos.devolverNumeroDeRegistro());
           this.frm_Vehiculos.habilitarAgregar();
+          
       }  
     }
+
+public String colocarNumeroDeRegistro(){
+    return this.metodos.generarNumeroDeRegistro();
+}
 }
